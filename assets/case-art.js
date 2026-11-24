@@ -3,10 +3,11 @@ const caseCards = document.querySelectorAll('.case-grid .case');
 function fitCaseArt(card) {
   const bounds = card.getBoundingClientRect();
   const art = getComputedStyle(card, '::after');
-  const right = bounds.right - parseFloat(art.right);
+  const alignLeft = card.classList.contains('character-left');
+  const edge = alignLeft ? bounds.left + parseFloat(art.left) : bounds.right - parseFloat(art.right);
   const bottom = bounds.bottom - parseFloat(art.bottom);
   const clearance = 6;
-  let size = Math.min(bounds.width * .29, 150);
+  let size = Math.min(bounds.width * .29, alignLeft ? 224 : 150);
   const text = document.createTreeWalker(card, NodeFilter.SHOW_TEXT);
   const range = document.createRange();
 
@@ -14,9 +15,10 @@ function fitCaseArt(card) {
     if (!text.currentNode.textContent.trim()) continue;
     range.selectNodeContents(text.currentNode);
 
-    // The corner illustration can clear each line either to its right or below it.
+    // The illustration can clear each line alongside it or below it.
     for (const line of range.getClientRects()) {
-      const room = Math.max(right - line.right, bottom - line.bottom) - clearance;
+      const sideRoom = alignLeft ? line.left - edge : edge - line.right;
+      const room = Math.max(sideRoom, bottom - line.bottom) - clearance;
       size = Math.min(size, room);
     }
   }
