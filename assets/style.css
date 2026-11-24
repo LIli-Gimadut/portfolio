@@ -226,12 +226,13 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 
 .case-grid, .demo-grid { display: grid; gap: clamp(.9rem, 2vw, 1.3rem); }
 .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.case-grid .case { position: relative; }
+.case-grid .case { position: relative; overflow: hidden; }
+.case-grid .case:not(.character-left) :is(dd, .case-summary) { text-wrap: balance; }
 .case-grid .case::after {
   content: "";
   position: absolute;
   z-index: 1;
-  right: -.25rem;
+  right: -.85rem;
   bottom: -1rem;
   width: var(--character-size, 0px);
   aspect-ratio: 1;
@@ -241,6 +242,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
   background-repeat: no-repeat;
   background-size: 400% 200%;
 }
+.case-grid .case:not(.character-left, #referrals)::after { transform: scaleX(-1); }
 .case-grid .character-left::after { left: .4rem; right: auto; }
 #localization, #feedback-automation { --character-x: 33.333333%; }
 #experiment, #ai-assistant { --character-x: 66.666667%; }

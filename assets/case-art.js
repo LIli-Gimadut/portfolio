@@ -1,9 +1,30 @@
 const caseCards = document.querySelectorAll('.case-grid .case');
 
+function wrapCornerText(card) {
+  const paragraph = card.querySelector('.case-summary, dl > dd:last-child');
+  paragraph.style.removeProperty('max-inline-size');
+  const fullWidth = paragraph.clientWidth;
+  const originalHeight = paragraph.clientHeight;
+  let lower = Math.ceil(fullWidth * .7);
+  let upper = fullWidth;
+
+  // Find room beside the final paragraph while preserving its number of lines.
+  while (upper - lower > 3) {
+    const width = Math.floor((lower + upper) / 2);
+    paragraph.style.maxInlineSize = `${width}px`;
+    if (paragraph.clientHeight > originalHeight) lower = width + 1;
+    else upper = width;
+  }
+
+  paragraph.style.maxInlineSize = `${upper}px`;
+}
+
 function fitCaseArt(card) {
+  const alignLeft = card.classList.contains('character-left');
+  if (!alignLeft) wrapCornerText(card);
+
   const bounds = card.getBoundingClientRect();
   const art = getComputedStyle(card, '::after');
-  const alignLeft = card.classList.contains('character-left');
   const edge = alignLeft ? bounds.left + parseFloat(art.left) : bounds.right - parseFloat(art.right);
   const bottom = bounds.bottom - parseFloat(art.bottom);
   const clearance = 6;
