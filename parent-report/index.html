@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивное демо двухнедельного родительского отчёта: посещаемость, домашние задания, проверочные, обратная связь и рекомендации.">
+  <title>Родительский отчёт</title>
+  <link rel="stylesheet" href="../assets/style.css?v=report">
+  <link rel="stylesheet" href="report.css">
+  <script type="module" src="report.js"></script>
+</head>
+<body class="report-app">
+  <header class="report-nav demo-shell">
+    <a href="../#parent-report">Портфолио</a>
+    <span>Демо на вымышленных данных</span>
+  </header>
+  <main class="demo-shell">
+    <section class="report-controls" aria-label="Параметры отчёта">
+      <div class="control-fields">
+        <label>Ученик <select id="student"></select></label>
+        <label>Период отчёта <select id="period"></select></label>
+      </div>
+      <div class="report-actions">
+        <a class="button" href="example.pdf" download>Скачать пример</a>
+        <button class="button primary" id="print" type="button" disabled>Сохранить отчёт в PDF</button>
+      </div>
+    </section>
+
+    <noscript><p>Для формирования отчёта нужен JavaScript. Готовый PDF доступен по кнопке «Скачать пример».</p></noscript>
+    <article id="report" class="report-sheet" aria-labelledby="report-title"></article>
+
+    <details class="source-panel">
+      <summary>Открыть таблицы, из которых собран отчёт</summary>
+      <p>Записи отбираются по ученику и датам выбранного периода. Показатели пересчитываются по этим строкам.</p>
+      <div id="source-tables"></div>
+      <p class="source-note"><strong>Как считаются уровни.</strong> Освоение материалов — среднее между качеством сданных ДЗ и результатом проверочных в процентах. Активность — средняя оценка учителя за посещённые уроки. Сроки — доля заданий, сданных вовремя, среди всех выданных. Внешкольная вовлечённость — доля посещённых мероприятий из предложенных. Проценты переводятся в шкалу от 0 до 5 и округляются до ближайшего целого.</p>
+    </details>
+  </main>
+</body>
+</html>

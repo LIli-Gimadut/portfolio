@@ -241,7 +241,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 #experiment { --card: var(--sky); }
 #referrals { --card: var(--yellow); }
 #time-to-market, #tolatam { --card: var(--violet); }
-#feedback-automation { --card: var(--mint); }
+#feedback-automation, #parent-report { --card: var(--mint); }
 #ai-assistant { background: radial-gradient(ellipse at 14% 0%, #7546d4, transparent 68%), var(--cobalt); color: #fff; }
 #ai-assistant :is(.eyebrow, dt) { color: var(--lime); }
 #ai-assistant dd { color: #fff; }
