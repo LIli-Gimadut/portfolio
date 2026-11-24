@@ -272,7 +272,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 #localization, #khimikotik { --card: var(--pink); }
 #experiment { --card: var(--sky); }
 #referrals { --card: var(--yellow); }
-#time-to-market, #tolatam { --card: var(--violet); }
+#time-to-market, #team-training { --card: var(--violet); }
 #feedback-automation, #parent-report { --card: var(--mint); }
 #ai-assistant { background: radial-gradient(ellipse at 14% 0%, #7546d4, transparent 68%), var(--cobalt); color: #fff; }
 #ai-assistant :is(.eyebrow, dt) { color: var(--lime); }
@@ -290,6 +290,20 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 .demo { overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
 .demo-copy h3 + p { margin-top: .85rem; }
 .demo-copy .button { margin-top: 1.2rem; }
+.training-links {
+  display: grid;
+  gap: .55rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.training-links .button {
+  margin: 0;
+  text-align: left;
+}
+.training-links span { white-space: nowrap; }
+.training-note { margin-top: 1rem; font-size: .85rem; }
+.training-note a { text-decoration: underline; }
 .demo img { display: block; width: 100%; height: auto; }
 #kuratorskaya .button:is(:hover, :focus-visible) { background: #fdd158; color: var(--ink); }
 
