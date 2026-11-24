@@ -243,7 +243,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 }
 #localization, #feedback-automation { --character-x: 33.333333%; }
 #experiment, #ai-assistant { --character-x: 66.666667%; }
-#referrals { --character-x: 100%; }
+#referrals::after { background: url("case-referral-character.webp") center / contain no-repeat; }
 #time-to-market, #feedback-automation, #ai-assistant { --character-y: 100%; }
 .metrics a, .case, .demo {
   background-color: var(--card, var(--paper));
