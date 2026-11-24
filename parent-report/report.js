@@ -1,4 +1,4 @@
-import { periods, students, tables } from './data.js';
+import { classroomFeedback, periods, students, tables } from './data.js?v=observations';
 
 const shortDate = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'short', timeZone: 'UTC' });
 const longDate = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', timeZone: 'UTC' });
@@ -39,7 +39,6 @@ function getReport(rows) {
   const gradeAverage = average(rows.checks.map((row) => row.grade / 5));
   const mastery = average([quality, gradeAverage].filter((value) => value !== null));
   const activity = average(attended.map((row) => row.activity / 5));
-  const best = rows.checks.reduce((best, row) => row.grade > best.grade ? row : best);
   const weakest = rows.checks.reduce((weakest, row) => row.grade < weakest.grade ? row : weakest);
   const missing = rows.homework.find((row) => row.status === 'не сдано');
   const practicePercentages = weakest.title === 'Проценты и задачи';
@@ -67,15 +66,6 @@ function getReport(rows) {
       ['Соблюдение сроков', level(share(onTime.length, rows.homework.length))],
       ['Вовлечённость во внешкольные мероприятия', level(share(eventCount, rows.events.length))],
     ],
-    feedback: [
-      `Особенно порадовала проверочная «${best.title}» — ${best.grade} из 5. ${missing ? `Получилось сдать ${submitted.length} из ${rows.homework.length} домашних заданий. Это хороший темп.` : 'Здорово, что получилось сдать все домашние задания.'}`,
-      practicePercentages
-        ? 'Давайте ещё немного потренируемся с процентами. Перед решением полезно подписывать, какая величина в задаче принята за 100%.'
-        : 'Давайте ещё немного потренируемся с дробями. Если записывать общий знаменатель и каждый шаг решения, будет проще заметить ошибку.',
-      attended.length === rows.lessons.length
-        ? 'Отдельно хочется отметить, что за эти две недели получилось побывать на всех уроках. Здорово держать такой ритм!'
-        : `За эти две недели получилось побывать на ${attended.length} уроках из ${rows.lessons.length}. Здорово, что удаётся заниматься регулярно. Такой ритм помогает увереннее браться за новые темы.`,
-    ],
     focus: [topicFocus, habitFocus, activitiesFocus],
   };
 }
@@ -88,7 +78,8 @@ function ratingRow(label, value) {
 }
 
 function renderReport(student, period, rows) {
-  const { metrics, ratings, feedback, focus } = getReport(rows);
+  const { metrics, ratings, focus } = getReport(rows);
+  const { feedback } = classroomFeedback.find((entry) => entry.student === student.id && entry.period === period.id);
   document.querySelector('#report').innerHTML = `
     <header class="sheet-heading">
       <div>
