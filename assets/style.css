@@ -21,7 +21,7 @@
   --ink: #241345;
   --soft-ink: #463562;
   --paper: #fffafb;
-  --cream: #fff1e5;
+  --cases-background: #efedf1;
   --violet: #d7b8ff;
   --cobalt: #512bbd;
   --lime: #dcf76a;
@@ -205,8 +205,16 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 
 .section { padding-block: clamp(2.7rem, 6vw, 5.2rem); }
 .section h2 { margin-bottom: 1.5rem; }
-#cases { background: var(--cream); }
-.case-note { max-width: 65ch; margin-bottom: 2rem; }
+#cases { background: var(--cases-background); }
+.case-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(10rem, 17rem);
+  align-items: center;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+.case-note { max-width: 65ch; }
+.case-illustration { display: block; width: 100%; height: auto; }
 .eyebrow {
   color: var(--ink);
   font-size: .865rem;
@@ -259,6 +267,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 .demo-copy h3 + p { margin-top: .85rem; }
 .demo-copy .button { margin-top: 1.2rem; }
 .demo img { display: block; width: 100%; height: auto; }
+#kuratorskaya .button:is(:hover, :focus-visible) { background: var(--cobalt); color: #fff; }
 
 .contact { background: radial-gradient(ellipse at 12% 0%, #8051df, transparent 68%), var(--cobalt); color: #fff; }
 .contact-layout {
@@ -287,6 +296,8 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 
 @media (max-width: 39rem) {
   .case-grid, .horizontal { grid-template-columns: 1fr; }
+  .case-heading { grid-template-columns: 1fr; }
+  .case-illustration { max-width: 11rem; justify-self: end; }
   .metrics span { font-size: .9rem; }
 }
 
