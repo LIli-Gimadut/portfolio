@@ -47,13 +47,14 @@ nav a:hover, .metrics a:hover span { color: var(--accent); }
 .primary:hover { background: #ffdbc2; }
 .section { border-top: 1px solid var(--line); padding-block: 2.2rem clamp(3.1rem, 7vw, 5rem); }
 .section > h2 { margin-bottom: 1.55rem; }
+.case-note { max-width: 65ch; margin-bottom: 1.55rem; }
 .case-grid, .demo-grid { display: grid; gap: 1rem; }
 .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case, .demo { border: 1px solid var(--line); border-radius: 1.2rem; background: var(--surface); }
 .case, .demo-copy { padding: clamp(1.2rem, 3vw, 2.25rem); }
 .case:target, .demo:target { border-color: var(--accent); }
 .case h3, .demo h3 { margin-top: .55rem; }
-.case dl { margin-top: 1.45rem; }
+.case dl, .case-summary { margin-top: 1.45rem; }
 .case dd + dt { margin-top: .85rem; }
 .case dt, .case strong { color: var(--text); font-weight: 700; }
 .case .horizontal { background: transparent; }
