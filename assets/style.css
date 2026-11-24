@@ -206,15 +206,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 .section { padding-block: clamp(2.7rem, 6vw, 5.2rem); }
 .section h2 { margin-bottom: 1.5rem; }
 #cases { background: var(--cases-background); }
-.case-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(10rem, 17rem);
-  align-items: center;
-  gap: clamp(1rem, 4vw, 2.5rem);
-  margin-bottom: 2rem;
-}
-.case-note { max-width: 65ch; }
-.case-illustration { display: block; width: 100%; height: auto; }
+.case-note { max-width: 65ch; margin-bottom: 2rem; }
 .eyebrow {
   color: var(--ink);
   font-size: .865rem;
@@ -328,8 +320,6 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 
 @media (max-width: 39rem) {
   .case-grid, .horizontal { grid-template-columns: 1fr; }
-  .case-heading { grid-template-columns: 1fr; }
-  .case-illustration { max-width: 11rem; justify-self: end; }
   .metrics span { font-size: .9rem; }
 }
 
