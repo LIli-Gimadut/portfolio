@@ -17,126 +17,141 @@
     <a class="monogram" href="./" aria-label="Liliia Gimadutdinova, home">LG</a>
     <nav aria-label="Navigation">
       <a href="#cases">Case studies</a>
+      <a href="#demos">Projects</a>
       <a href="#contact">Contact</a>
       <a class="language" href="../" lang="ru" hreflang="ru" aria-label="Русская версия">RU</a>
     </nav>
   </header>
-  <main id="main" class="shell">
+  <main id="main">
     <section class="hero" aria-labelledby="intro">
-      <div class="intro">
-        <p class="eyebrow">Product &amp; Project Manager</p>
-        <h1 id="intro">Liliia<br>Gimadutdinova</h1>
-        <p class="lead">I identify growth opportunities in B2C products, test hypotheses and deliver improvements. I have over five years of experience in EdTech.</p>
-        <a class="button primary" href="#cases">Explore the case studies</a>
+      <div class="shell hero-layout">
+        <div class="intro">
+          <p class="eyebrow">Product &amp; Project Manager</p>
+          <h1 id="intro">Liliia<br>Gimadutdinova</h1>
+          <p class="lead">I identify growth opportunities in B2C products, test hypotheses and deliver improvements. I have over five years of experience in EdTech.</p>
+          <a class="button primary" href="#cases">Explore the case studies</a>
+        </div>
+        <img class="hero-art" src="../assets/paper-growth.jpg" width="1080" height="1080" fetchpriority="high" alt="">
       </div>
-      <div class="metrics" aria-label="Selected results">
-        <a href="#experiment"><strong>+12 <small>pp</small></strong><span>in completion of a key action in an A/B test</span></a>
+    </section>
+
+    <section class="metrics-band" aria-label="Selected results">
+      <div class="shell metrics">
+        <a href="#retention"><strong>+20%</strong><span>increase in monthly retention</span></a>
+        <a href="#experiment"><strong>+12 <small>pp</small></strong><span>in completion in an A/B test</span></a>
         <a href="#referrals"><strong>30+</strong><span>families attracted through referrals</span></a>
+        <a href="#time-to-market"><strong>4 → 2 <small>weeks</small></strong><span>time to launch a learning format</span></a>
       </div>
     </section>
 
     <section id="cases" class="section" aria-labelledby="results">
-      <h2 id="results">Case studies</h2>
-      <p class="case-note">My projects for schools are covered by NDAs. On request, I can share anonymised excerpts and prototypes cleared for sharing.</p>
-      <div class="case-grid">
-        <article class="case" id="retention">
-          <p class="eyebrow">EdTech · Retention</p>
-          <h3>Improving retention through customer feedback</h3>
-          <dl>
-            <dt>My role</dt><dd>I analysed more than 300 enquiries from learners and parents and used the findings to build and prioritise a backlog of improvements.</dd>
-            <dt>Result</dt><dd>Monthly retention increased by <strong>20%</strong>, and the customer satisfaction index rose from 3.8 to 4.6 out of 5.</dd>
-          </dl>
-        </article>
-        <article class="case" id="localization">
-          <p class="eyebrow">EdTech · Localisation</p>
-          <h3>Localising exam preparation courses</h3>
-          <p class="case-summary">I scaled exam preparation courses to <strong>three languages</strong> (Russian, Kazakh and English).</p>
-        </article>
-        <article class="case" id="experiment">
-          <p class="eyebrow">EdTech · A/B testing</p>
-          <h3>Making a key learning action easier to complete</h3>
-          <dl>
-            <dt>Challenge</dt><dd>Find out which of two learning flows helped more users reach and complete a key action.</dd>
-            <dt>My role</dt><dd>I compared both flows in an A/B test with 200 users and measured the share of users who completed the action.</dd>
-            <dt>Result</dt><dd>The winning flow increased completion by <strong>12 percentage points</strong>.</dd>
-          </dl>
-        </article>
-        <article class="case" id="referrals">
-          <p class="eyebrow">EdTech · Referral growth</p>
-          <h3>A referral programme for an online school</h3>
-          <dl>
-            <dt>Challenge</dt><dd>Attract new families through recommendations from existing customers.</dd>
-            <dt>My role</dt><dd>I designed how the programme worked, organised the launch and analysed its performance.</dd>
-            <dt>Result</dt><dd>The programme attracted <strong>more than 30 families</strong>.</dd>
-          </dl>
-        </article>
-        <article class="case" id="time-to-market">
-          <p class="eyebrow">EdTech · Delivery</p>
-          <h3>Launching a new learning format faster</h3>
-          <dl>
-            <dt>My role</dt><dd>I introduced a shared process for assigning tasks and approving deliverables.</dd>
-            <dt>Result</dt><dd>I cut the time to launch a new learning format <strong>from four weeks to two</strong>.</dd>
-          </dl>
-        </article>
-        <article class="case" id="feedback-automation">
-          <p class="eyebrow">EdTech · Automation</p>
-          <h3>Less manual work processing feedback</h3>
-          <dl>
-            <dt>My role</dt><dd>I automated the collection of post-lesson feedback.</dd>
-            <dt>Result</dt><dd>Manual processing dropped <strong>from six hours a week to two</strong>.</dd>
-          </dl>
-        </article>
-        <article class="case horizontal" id="ai-assistant">
-          <div>
-            <p class="eyebrow">EdTech · AI delivery</p>
-            <h3>A learner assistant for a school LMS</h3>
-          </div>
-          <dl>
-            <dt>Challenge</dt><dd>Build an assistant into the learning platform to answer students’ questions.</dd>
-            <dt>My role</dt><dd>I agreed on requirements and scope with the CPO. I used AI tools to prototype the assistant and implement retrieval-augmented generation (RAG), so it could find relevant information and use it as context when generating answers. I tested user scenarios and addressed cases where the assistant gave off-topic answers.</dd>
-            <dt>Result</dt><dd>I ran a pilot, reviewed feedback, made revisions and rolled the assistant out to all platform users.</dd>
-          </dl>
-        </article>
+      <div class="shell">
+        <h2 id="results">Case studies</h2>
+        <p class="case-note">My projects for schools are covered by NDAs. On request, I can share anonymised excerpts and prototypes cleared for sharing.</p>
+        <div class="case-grid">
+          <article class="case" id="retention">
+            <p class="eyebrow">EdTech · Retention</p>
+            <h3>Improving retention through customer feedback</h3>
+            <dl>
+              <dt>My role</dt><dd>I analysed more than 300 enquiries from learners and parents and used the findings to build and prioritise a backlog of improvements.</dd>
+              <dt>Result</dt><dd>Monthly retention increased by <strong>20%</strong>, and the customer satisfaction index rose from 3.8 to 4.6 out of 5.</dd>
+            </dl>
+          </article>
+          <article class="case" id="localization">
+            <p class="eyebrow">EdTech · Localisation</p>
+            <h3>Localising exam preparation courses</h3>
+            <p class="case-summary">I scaled exam preparation courses to <strong>three languages</strong> (Russian, Kazakh and English).</p>
+          </article>
+          <article class="case" id="experiment">
+            <p class="eyebrow">EdTech · A/B testing</p>
+            <h3>Making a key learning action easier to complete</h3>
+            <dl>
+              <dt>Challenge</dt><dd>Find out which of two learning flows helped more users reach and complete a key action.</dd>
+              <dt>My role</dt><dd>I compared both flows in an A/B test with 200 users and measured the share of users who completed the action.</dd>
+              <dt>Result</dt><dd>The winning flow increased completion by <strong>12 percentage points</strong>.</dd>
+            </dl>
+          </article>
+          <article class="case" id="referrals">
+            <p class="eyebrow">EdTech · Referral growth</p>
+            <h3>A referral programme for an online school</h3>
+            <dl>
+              <dt>Challenge</dt><dd>Attract new families through recommendations from existing customers.</dd>
+              <dt>My role</dt><dd>I designed how the programme worked, organised the launch and analysed its performance.</dd>
+              <dt>Result</dt><dd>The programme attracted <strong>more than 30 families</strong>.</dd>
+            </dl>
+          </article>
+          <article class="case" id="time-to-market">
+            <p class="eyebrow">EdTech · Delivery</p>
+            <h3>Launching a new learning format faster</h3>
+            <dl>
+              <dt>My role</dt><dd>I introduced a shared process for assigning tasks and approving deliverables.</dd>
+              <dt>Result</dt><dd>I cut the time to launch a new learning format <strong>from four weeks to two</strong>.</dd>
+            </dl>
+          </article>
+          <article class="case" id="feedback-automation">
+            <p class="eyebrow">EdTech · Automation</p>
+            <h3>Less manual work processing feedback</h3>
+            <dl>
+              <dt>My role</dt><dd>I automated the collection of post-lesson feedback.</dd>
+              <dt>Result</dt><dd>Manual processing dropped <strong>from six hours a week to two</strong>.</dd>
+            </dl>
+          </article>
+          <article class="case horizontal" id="ai-assistant">
+            <div>
+              <p class="eyebrow">EdTech · AI delivery</p>
+              <h3>A learner assistant for a school LMS</h3>
+            </div>
+            <dl>
+              <dt>Challenge</dt><dd>Build an assistant into the learning platform to answer students’ questions.</dd>
+              <dt>My role</dt><dd>I agreed on requirements and scope with the CPO. I used AI tools to prototype the assistant and implement retrieval-augmented generation (RAG), so it could find relevant information and use it as context when generating answers. I tested user scenarios and addressed cases where the assistant gave off-topic answers.</dd>
+              <dt>Result</dt><dd>I ran a pilot, reviewed feedback, made revisions and rolled the assistant out to all platform users.</dd>
+            </dl>
+          </article>
+        </div>
       </div>
     </section>
 
     <section id="demos" class="section" aria-labelledby="projects">
-      <h2 id="projects">Live projects</h2>
-      <div class="demo-grid">
-        <article class="demo" id="khimikotik">
-          <div class="demo-copy">
-            <p class="eyebrow">Personal project · EdTech</p>
-            <h3>Khimikotik</h3>
-            <p>A browser game with three modes for practising school chemistry. I designed the learning mechanics, checked the exercise logic and used Codex to adapt the Python/Pygame prototype for the browser.</p>
-            <a class="button" href="https://khimikotik.liliya-gimadutdinova.chatgpt.site/" hreflang="ru">Open the demo in Russian</a>
-          </div>
-          <img src="../assets/khimikotik.jpg" width="1710" height="775" loading="lazy" alt="Khimikotik screen showing test tubes and an ion exchange exercise">
-        </article>
-        <article class="case demo-copy" id="tolatam">
-          <p class="eyebrow">Collaborative project · AI</p>
-          <h3>ToLatam</h3>
-          <p>The service brings together information about relocating to Latin America. I was responsible for configuring the AI bots and working on the frontend.</p>
-          <a class="button" href="https://tolatam.com/ru" hreflang="ru">Open ToLatam in Russian</a>
-        </article>
-        <article class="case horizontal demo-copy" id="kuratorskaya">
-          <div>
-            <p class="eyebrow">EdTech · Team training</p>
-            <h3>Kuratorskaya</h3>
-          </div>
-          <div>
-            <p>I built an interactive communication trainer for online school mentors with Claude. Across six scenarios, from repeated deadline extensions to a conflict with an instructor, mentors choose how to respond and receive feedback on their decision.</p>
-            <a class="button" href="https://lili-gimadut.github.io/kuratorskaya/" hreflang="ru">Launch the trainer in Russian</a>
-          </div>
-        </article>
+      <div class="shell">
+        <h2 id="projects">Live projects</h2>
+        <div class="demo-grid">
+          <article class="demo" id="khimikotik">
+            <div class="demo-copy">
+              <p class="eyebrow">Personal project · EdTech</p>
+              <h3>Khimikotik</h3>
+              <p>A browser game with three modes for practising school chemistry. I designed the learning mechanics, checked the exercise logic and used Codex to adapt the Python/Pygame prototype for the browser.</p>
+              <a class="button" href="https://khimikotik.liliya-gimadutdinova.chatgpt.site/" hreflang="ru">Open the demo in Russian</a>
+            </div>
+            <img src="../assets/khimikotik.jpg" width="1710" height="775" loading="lazy" alt="Khimikotik screen showing test tubes and an ion exchange exercise">
+          </article>
+          <article class="case demo-copy" id="tolatam">
+            <p class="eyebrow">Collaborative project · AI</p>
+            <h3>ToLatam</h3>
+            <p>The service brings together information about relocating to Latin America. I was responsible for configuring the AI bots and working on the frontend.</p>
+            <a class="button" href="https://tolatam.com/ru" hreflang="ru">Open ToLatam in Russian</a>
+          </article>
+          <article class="case horizontal demo-copy" id="kuratorskaya">
+            <div>
+              <p class="eyebrow">EdTech · Team training</p>
+              <h3>Kuratorskaya</h3>
+            </div>
+            <div>
+              <p>I built an interactive communication trainer for online school mentors with Claude. Across six scenarios, from repeated deadline extensions to a conflict with an instructor, mentors choose how to respond and receive feedback on their decision.</p>
+              <a class="button" href="https://lili-gimadut.github.io/kuratorskaya/" hreflang="ru">Launch the trainer in Russian</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="contact" aria-labelledby="talk">
-      <div>
-        <h2 id="talk">Let’s talk</h2>
-        <p>I’m open to fully remote Product, Project and Product Operations roles.</p>
+      <div class="shell contact-layout">
+        <div>
+          <h2 id="talk">Let’s talk</h2>
+          <p>I’m open to fully remote Product, Project and Product Operations roles.</p>
+        </div>
+        <a class="button primary" href="https://www.linkedin.com/in/liliia-gimadutdinova/">Message me on LinkedIn</a>
       </div>
-      <a class="button primary" href="https://www.linkedin.com/in/liliia-gimadutdinova/">Message me on LinkedIn</a>
     </section>
   </main>
   <footer class="shell footer">Liliia Gimadutdinova</footer>
