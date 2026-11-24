@@ -304,9 +304,16 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 }
 .contact h2 { font-size: clamp(2.15rem, 4.8vw, 3.9rem); }
 .contact p { max-width: 50ch; margin-top: .65rem; color: #fff; }
+.contact-links {
+  width: min(100%, 26rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .65rem;
+}
+.contact-links .button { width: 100%; }
 .contact .primary { background: var(--lime); color: var(--ink); }
 .contact .primary:hover { background: var(--yellow); }
-.contact .primary:focus-visible { outline-color: #fff; }
+.contact-links .button:focus-visible { outline-color: #fff; }
 .footer { padding-block: 1.4rem; color: var(--soft-ink); font-size: .9rem; }
 
 @media (max-width: 53rem) {
