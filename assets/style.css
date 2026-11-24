@@ -21,14 +21,15 @@
   --ink: #241345;
   --soft-ink: #463562;
   --paper: #fffafb;
-  --cream: #fff1e5;
+  --case-surface: #f4f8ff;
   --violet: #d7b8ff;
   --cobalt: #512bbd;
   --lime: #dcf76a;
-  --pink: #ffa4d0;
+  --coral: #ffad89;
   --yellow: #ffd35a;
   --sky: #92d8ff;
-  --mint: #91ebc3;
+  --periwinkle: #adc1ff;
+  --aqua: #7ce2e7;
   --shine: radial-gradient(ellipse 75% 31% at 32% 0%, #fff9, transparent);
   --soft-depth: inset 0 2px 3px #fff9, inset 0 -4px 10px #6525a812, 0 .45rem 1rem #6e379c20;
   --display: Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -155,7 +156,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
   aspect-ratio: 1;
   border-radius: clamp(1.65rem, 3vw, 2.55rem);
   box-shadow: 0 .7rem 1.65rem #90459038;
-  background: var(--pink);
+  background: var(--coral);
 }
 
 .button {
@@ -192,7 +193,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 .metrics a:nth-child(1) { --card: var(--lime); }
-.metrics a:nth-child(2) { --card: var(--pink); }
+.metrics a:nth-child(2) { --card: var(--coral); }
 .metrics a:nth-child(3) { --card: var(--sky); }
 .metrics a:nth-child(4) { --card: var(--yellow); }
 .metrics a:hover { transform: translateY(-.22rem); box-shadow: var(--soft-depth), 0 .45rem 1.35rem #6e379c26; }
@@ -206,7 +207,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 
 .section { padding-block: clamp(2.7rem, 6vw, 5.2rem); }
 .section h2 { margin-bottom: 1.5rem; }
-#cases { background: var(--cream); }
+#cases { background: var(--case-surface); }
 .case-note { max-width: 65ch; margin-bottom: 2rem; }
 .eyebrow {
   color: var(--ink);
@@ -239,11 +240,11 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
   -webkit-box-decoration-break: clone;
 }
 #retention, #kuratorskaya { --card: var(--lime); }
-#localization, #khimikotik { --card: var(--pink); }
+#localization, #khimikotik { --card: var(--coral); }
 #experiment { --card: var(--sky); }
 #referrals { --card: var(--yellow); }
-#time-to-market, #tolatam { --card: var(--violet); }
-#feedback-automation { --card: var(--mint); }
+#time-to-market, #tolatam { --card: var(--periwinkle); }
+#feedback-automation { --card: var(--aqua); }
 #ai-assistant { background: radial-gradient(ellipse at 14% 0%, #7546d4, transparent 68%), var(--cobalt); color: #fff; }
 #ai-assistant :is(.eyebrow, dt) { color: var(--lime); }
 #ai-assistant dd { color: #fff; }
