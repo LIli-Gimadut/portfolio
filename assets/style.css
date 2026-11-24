@@ -227,6 +227,13 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 .case-grid, .demo-grid { display: grid; gap: clamp(.9rem, 2vw, 1.3rem); }
 .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case-grid .case { position: relative; overflow: hidden; }
+.case-grid .case:not(.character-left) { --character-size: clamp(5.75rem, 12vw, 9.375rem); }
+.case-grid .case:not(.character-left) > :is(dl, .case-summary) {
+  min-block-size: calc(var(--character-size) - var(--card-padding) - 1rem);
+}
+.case-grid .case:not(.character-left) :is(.case-summary, dd:nth-last-child(-n + 3)) {
+  padding-inline-end: calc(var(--character-size) - var(--card-padding) - .45rem);
+}
 .case-grid .case:not(.character-left) :is(dd, .case-summary) { text-wrap: balance; }
 .case-grid .case::after {
   content: "";
@@ -253,7 +260,10 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
   box-shadow: var(--soft-depth);
 }
 .case, .demo { border-radius: clamp(1.45rem, 2.8vw, 2rem); }
-.case, .demo-copy { padding: clamp(1.2rem, 3vw, 2.1rem); }
+.case, .demo-copy {
+  --card-padding: clamp(1.2rem, 3vw, 2.1rem);
+  padding: var(--card-padding);
+}
 .case:target, .demo:target { box-shadow: var(--soft-depth), 0 0 1rem .2rem #7445df50; }
 .case h3, .demo h3 { margin-top: .6rem; }
 .case dl, .case-summary { margin-top: 1.35rem; }

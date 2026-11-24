@@ -1,34 +1,12 @@
-const caseCards = document.querySelectorAll('.case-grid .case');
-
-function wrapCornerText(card) {
-  const paragraph = card.querySelector('.case-summary, dl > dd:last-child');
-  paragraph.style.removeProperty('max-inline-size');
-  const fullWidth = paragraph.clientWidth;
-  const originalHeight = paragraph.clientHeight;
-  let lower = Math.ceil(fullWidth * .7);
-  let upper = fullWidth;
-
-  // Find room beside the final paragraph while preserving its number of lines.
-  while (upper - lower > 3) {
-    const width = Math.floor((lower + upper) / 2);
-    paragraph.style.maxInlineSize = `${width}px`;
-    if (paragraph.clientHeight > originalHeight) lower = width + 1;
-    else upper = width;
-  }
-
-  paragraph.style.maxInlineSize = `${upper}px`;
-}
+const caseCards = document.querySelectorAll('.case-grid .character-left');
 
 function fitCaseArt(card) {
-  const alignLeft = card.classList.contains('character-left');
-  if (!alignLeft) wrapCornerText(card);
-
   const bounds = card.getBoundingClientRect();
   const art = getComputedStyle(card, '::after');
-  const edge = alignLeft ? bounds.left + parseFloat(art.left) : bounds.right - parseFloat(art.right);
+  const edge = bounds.left + parseFloat(art.left);
   const bottom = bounds.bottom - parseFloat(art.bottom);
   const clearance = 6;
-  let size = Math.min(bounds.width * .29, alignLeft ? 224 : 150);
+  let size = Math.min(bounds.width * .29, 224);
   const text = document.createTreeWalker(card, NodeFilter.SHOW_TEXT);
   const range = document.createRange();
 
@@ -38,8 +16,7 @@ function fitCaseArt(card) {
 
     // The illustration can clear each line alongside it or below it.
     for (const line of range.getClientRects()) {
-      const sideRoom = alignLeft ? line.left - edge : edge - line.right;
-      const room = Math.max(sideRoom, bottom - line.bottom) - clearance;
+      const room = Math.max(line.left - edge, bottom - line.bottom) - clearance;
       size = Math.min(size, room);
     }
   }
