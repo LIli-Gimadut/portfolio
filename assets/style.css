@@ -267,7 +267,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 .demo-copy h3 + p { margin-top: .85rem; }
 .demo-copy .button { margin-top: 1.2rem; }
 .demo img { display: block; width: 100%; height: auto; }
-#kuratorskaya .button:is(:hover, :focus-visible) { background: var(--cobalt); color: #fff; }
+#kuratorskaya .button:is(:hover, :focus-visible) { background: #fdd158; color: var(--ink); }
 
 .contact { background: radial-gradient(ellipse at 12% 0%, #8051df, transparent 68%), var(--cobalt); color: #fff; }
 .contact-layout {
