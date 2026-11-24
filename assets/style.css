@@ -226,26 +226,25 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 
 .case-grid, .demo-grid { display: grid; gap: clamp(.9rem, 2vw, 1.3rem); }
 .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.case-grid .case:not(.horizontal) { display: flex; flex-direction: column; }
-.case-grid .case:not(.horizontal) > :last-child { margin-block-end: .55rem; }
+.case-grid .case { position: relative; }
 .case-grid .case::after {
   content: "";
-  width: clamp(6rem, 13vw, 8.75rem);
+  position: absolute;
+  z-index: 1;
+  right: -.25rem;
+  bottom: -1rem;
+  width: var(--character-size, 0px);
   aspect-ratio: 1;
-  margin: auto -.55rem -.65rem auto;
-  flex: none;
-  background-image: var(--character-sheet, url("case-characters-original.webp"));
+  pointer-events: none;
+  background-image: url("case-characters-friendly.webp");
   background-position: var(--character-x, 0%) var(--character-y, 0%);
   background-repeat: no-repeat;
   background-size: 400% 200%;
 }
-#localization, #experiment, #time-to-market { --character-sheet: url("case-characters-men.webp"); }
 #localization, #feedback-automation { --character-x: 33.333333%; }
 #experiment, #ai-assistant { --character-x: 66.666667%; }
 #referrals { --character-x: 100%; }
 #time-to-market, #feedback-automation, #ai-assistant { --character-y: 100%; }
-.case-grid .horizontal { row-gap: .6rem; }
-.case-grid .horizontal::after { grid-column: 2; }
 .metrics a, .case, .demo {
   background-color: var(--card, var(--paper));
   box-shadow: var(--soft-depth);
@@ -316,7 +315,6 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 
 @media (max-width: 39rem) {
   .case-grid, .horizontal { grid-template-columns: 1fr; }
-  .case-grid .horizontal::after { grid-column: 1; }
   .case-heading { grid-template-columns: 1fr; }
   .case-illustration { max-width: 11rem; justify-self: end; }
   .metrics span { font-size: .9rem; }
