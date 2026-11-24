@@ -30,8 +30,7 @@
   --sky: #92d8ff;
   --periwinkle: #adc1ff;
   --aqua: #7ce2e7;
-  --shine: radial-gradient(ellipse 75% 31% at 32% 0%, #fff9, transparent);
-  --soft-depth: inset 0 2px 3px #fff9, inset 0 -4px 10px #6525a812, 0 .45rem 1rem #6e379c20;
+  --soft-depth: inset 0 -4px 10px #6525a812, 0 .45rem 1rem #6e379c20;
   --display: Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;
   font: 100%/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -86,7 +85,7 @@ section, article { scroll-margin-top: 1rem; }
   width: 2.75rem;
   aspect-ratio: 1;
   flex: none;
-  background: var(--shine), linear-gradient(145deg, #f2ff9e, var(--lime));
+  background: linear-gradient(145deg, #f2ff9e, var(--lime));
   border-radius: 48% 48% 46% 46%;
   box-shadow: var(--soft-depth);
   font: 900 1.12rem var(--display);
@@ -118,7 +117,7 @@ nav a:hover { text-decoration: underline; text-underline-offset: .28em; }
 nav .language {
   padding-inline: .8rem;
   border-radius: 2rem;
-  background: var(--shine), #ebd7ff;
+  background: #ebd7ff;
   box-shadow: var(--soft-depth);
 }
 nav .language:hover { background: var(--lime); text-decoration: none; }
@@ -139,7 +138,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
   padding: .32rem .78rem;
   margin-bottom: 1.15rem;
   border-radius: .75rem;
-  background: var(--shine), var(--lime);
+  background: var(--lime);
   box-shadow: var(--soft-depth);
   color: var(--ink);
   transform: rotate(-2deg);
@@ -167,7 +166,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
   justify-content: center;
   padding: .62rem 1.18rem;
   border-radius: 2rem;
-  background: var(--shine), var(--paper);
+  background: var(--paper);
   box-shadow: var(--soft-depth);
   color: var(--ink);
   font-size: .94rem;
@@ -176,7 +175,7 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
   text-align: center;
   text-decoration: none;
 }
-.button:hover { background: var(--shine), var(--lime); }
+.button:hover { background: var(--lime); }
 .primary {
   background: linear-gradient(175deg, #7445df, var(--cobalt));
   color: #fff;
@@ -222,7 +221,6 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .metrics a, .case, .demo {
   background-color: var(--card, var(--paper));
-  background-image: var(--shine);
   box-shadow: var(--soft-depth);
 }
 .case, .demo { border-radius: clamp(1.45rem, 2.8vw, 2rem); }
@@ -274,8 +272,8 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 }
 .contact h2 { font-size: clamp(2.15rem, 4.8vw, 3.9rem); }
 .contact p { max-width: 50ch; margin-top: .65rem; color: #fff; }
-.contact .primary { background: var(--shine), var(--lime); color: var(--ink); }
-.contact .primary:hover { background: var(--shine), var(--yellow); }
+.contact .primary { background: var(--lime); color: var(--ink); }
+.contact .primary:hover { background: var(--yellow); }
 .contact .primary:focus-visible { outline-color: #fff; }
 .footer { padding-block: 1.4rem; color: var(--soft-ink); font-size: .9rem; }
 
