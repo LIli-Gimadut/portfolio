@@ -42,7 +42,8 @@ function getReport(rows) {
   const best = rows.checks.reduce((best, row) => row.grade > best.grade ? row : best);
   const weakest = rows.checks.reduce((weakest, row) => row.grade < weakest.grade ? row : weakest);
   const missing = rows.homework.find((row) => row.status === 'не сдано');
-  const topicFocus = weakest.title === 'Проценты и задачи'
+  const practicePercentages = weakest.title === 'Проценты и задачи';
+  const topicFocus = practicePercentages
     ? 'Решить три задачи на проценты. В каждой сначала подписать, какую величину принимаем за 100%.'
     : 'Разобрать три примера на дроби. Записывать общий знаменатель и каждый шаг решения.';
   const habitFocus = missing
@@ -67,9 +68,13 @@ function getReport(rows) {
       ['Вовлечённость во внешкольные мероприятия', level(share(eventCount, rows.events.length))],
     ],
     feedback: [
-      ['Что получилось', `Хороший результат по теме «${best.title}» — ${best.grade} из 5. Выполнено ${submitted.length} из ${rows.homework.length} домашних заданий, и это помогает закрепить материал.`],
-      ['Что подтянуть', `Начать стоит с темы «${weakest.title}» (${weakest.grade} из 5). Достаточно короткой практики с проверкой каждого шага.${missing ? ' Одно задание пока не сдано.' : ''}`],
-      ['На что опереться', `Посещено ${attended.length} из ${rows.lessons.length} уроков. Эта регулярность помогает двигаться дальше и спокойно разбирать сложные темы.`],
+      `Особенно порадовала проверочная «${best.title}» — ${best.grade} из 5. ${missing ? `Получилось сдать ${submitted.length} из ${rows.homework.length} домашних заданий. Это хороший темп.` : 'Здорово, что получилось сдать все домашние задания.'}`,
+      practicePercentages
+        ? 'Давайте ещё немного потренируемся с процентами. Перед решением полезно подписывать, какая величина в задаче принята за 100%.'
+        : 'Давайте ещё немного потренируемся с дробями. Если записывать общий знаменатель и каждый шаг решения, будет проще заметить ошибку.',
+      attended.length === rows.lessons.length
+        ? 'Отдельно хочется отметить, что за эти две недели получилось побывать на всех уроках. Здорово держать такой ритм!'
+        : `За эти две недели получилось побывать на ${attended.length} уроках из ${rows.lessons.length}. Здорово, что удаётся заниматься регулярно. Такой ритм помогает увереннее браться за новые темы.`,
     ],
     focus: [topicFocus, habitFocus, activitiesFocus],
   };
@@ -108,7 +113,7 @@ function renderReport(student, period, rows) {
       </section>
       <section class="sheet-section feedback">
         <h2>Обратная связь за период</h2>
-        ${feedback.map(([label, paragraph]) => `<p><strong>${label}.</strong> ${escape(paragraph)}</p>`).join('')}
+        ${feedback.map((paragraph) => `<p>${escape(paragraph)}</p>`).join('')}
       </section>
       <div class="sheet-columns">
         <section class="sheet-section">
@@ -122,7 +127,7 @@ function renderReport(student, period, rows) {
         </section>
       </div>
     </div>
-    <footer class="sheet-footer">Спасибо за доверие, включённость и ваш вклад в развитие ребёнка. Поддержка дома помогает закреплять учебные привычки и замечать прогресс.</footer>
+    <footer class="sheet-footer">Спасибо за доверие, включённость и ваш вклад в развитие ребёнка.<br>Поддержка дома помогает закреплять учебные привычки и замечать прогресс.</footer>
     <p class="sheet-stamp">Демонстрационный отчёт · вымышленные данные</p>`;
 }
 
