@@ -219,11 +219,11 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 .case-grid, .demo-grid { display: grid; gap: clamp(.9rem, 2vw, 1.3rem); }
 .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case-grid .case { position: relative; overflow: hidden; }
-.case-grid .case:not(.character-left) { --character-size: clamp(5.75rem, 12vw, 9.375rem); }
-.case-grid .case:not(.character-left) > :is(dl, .case-summary) {
+.case-grid .case:not(.character-left, .case-plain) { --character-size: clamp(5.75rem, 12vw, 9.375rem); }
+.case-grid .case:not(.character-left, .case-plain) > :is(dl, .case-summary) {
   min-block-size: calc(var(--character-size) - var(--card-padding) - 1rem);
 }
-.case-grid .case:not(.character-left) :is(.case-summary, dd:nth-last-child(-n + 3)) {
+.case-grid .case:not(.character-left, .case-plain) :is(.case-summary, dd:nth-last-child(-n + 3)) {
   padding-inline-end: calc(var(--character-size) - var(--card-padding) - .45rem);
 }
 .case-grid .case:not(.character-left) :is(dd, .case-summary) { text-wrap: balance; }
@@ -270,8 +270,8 @@ nav .language:hover { background: var(--lime); text-decoration: none; }
 }
 #retention, #kuratorskaya { --card: var(--lime); }
 #localization, #khimikotik { --card: var(--pink); }
-#experiment { --card: var(--sky); }
-#referrals { --card: var(--yellow); }
+#experiment, #project-dashboards { --card: var(--sky); }
+#referrals, #incident-response { --card: var(--yellow); }
 #time-to-market, #team-training { --card: var(--violet); }
 #feedback-automation, #parent-report { --card: var(--mint); }
 #ai-assistant { background: radial-gradient(ellipse at 14% 0%, #7546d4, transparent 68%), var(--cobalt); color: #fff; }
